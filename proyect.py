@@ -1,7 +1,7 @@
 import math
 import time
 
-version = "Alpha 6.1"
+version = "Alpha 7.0"
 
 
 def main():
@@ -544,16 +544,17 @@ def main():
 
                 # Trigonometría (Uso de lados y ángulos)
                 elif option == 3:
-                    print("\nEstos problemas se realizan con un triángulo rectángulo.")
+                    print("\nEstos problemas se realizan exclusivamente con triángulos rectángulos.")
                     print("Es decir, aquellos triángulos que poseen un ángulo de 90º grados.")
-                    time.sleep(5)
-                    print("\nA continuación, escoja un parámetro a calcular:")
-                    print("\n1 - Seno (Se necesita los valores del ángulo visto desde el cateto opuesto y "
-                          "de la hipotenusa)")
-                    print("2 - Coseno (Se necesita los valores del ángulo visto desde el cateto adyacente y de la "
-                          "hipotenusa)")
-                    print("3 - Tangente (Se necesitan los valores de los dos catetos)")
-                    print("4 - Arcotangente (Se necesitan los valores de los dos catetos)")
+                    time.sleep(4)
+                    print("\nA continuación, escoja una función trigonométrica:")
+                    time.sleep(2)
+                    print("1 - Seno")
+                    print("2 - Coseno")
+                    print("3 - Tangente")
+                    print("4 - Cosecante")
+                    print("5 - Secante")
+                    print("6 - Cotangente")
                     option = int(input("Opción: "))
 
                     # Seno
@@ -568,6 +569,7 @@ def main():
                         print("Regresando al menú principal...")
                         time.sleep(2)
                         main()
+
                     # Coseno
                     elif option == 2:
                         hip = float(input("\nIngrese el valor de la hipotenusa: "))
@@ -592,25 +594,166 @@ def main():
                         time.sleep(2)
                         main()
 
-                    # Arcotangente
+                    # Cosecante
                     elif option == 4:
-                        co = float(input("\nIngrese el valor del cateto opuesto: "))
-                        ca = float(input("Ingrese el valor del cateto adyacente: "))
-                        if co / ca == 90 or co / ca == 270:
-                            print("\nError: La función no se encuentra definida para este punto.")
-                            print("Regresando al menú de polígonos...")
-                            time.sleep(5)
-                            fig_2d()
-                        else:
-                            tan = co / ca
-                            arctan = math.degrees(math.atan(tan))
-                            arctan_rad = math.atan(tan)
-                            print(f"\nEl ángulo presente en este triángulo tiene una medida de {arctan:.2f} grados.")
-                            print(f"Su equivalente en radianes es de {arctan_rad:.2f} rad.")
-                            time.sleep(10)
-                            print("\nRegresando al menú principal...")
-                            time.sleep(5)
+                        print("\n¿En función de qué desea realizar esta función?")
+                        print("1 - De la hipotenusa y cateto opuesto")
+                        print("2 - Del valor del seno del ángulo")
+                        print("3 - Del ángulo")
+                        en_function = int(input("Opción: "))
+
+                        # Hipotenusa y cateto opuesto
+                        if en_function == 1:
+                            co = float(input("\nIngrese el valor del cateto opuesto: "))
+                            hip = float(input("Ingrese el valor de la hipotenusa: "))
+                            csc = hip / co
+                            if co <= 0 or hip <= 0:
+                                print("Error: Los valores ingresados no puden albergar valores menores o iguales a"
+                                      " cero.")
+                                time.sleep(3)
+                                print("Regresando al menú de selección de polígonos...")
+                                fig_2d()
+                            else:
+                                print(f"\nLa cosecante de este triángulo tiene un valor de {csc:.2f} unidades.")
+                                time.sleep(5)
+                                print("Regresando al menú principal...")
+                                time.sleep(3)
+                                main()
+
+                        # Seno del ángulo
+                        elif en_function == 2:
+                            sen = float(input("\nIngrese el valor de seno: "))
+                            csc = 1 / sen
+                            print(f"\nLa cosecante de este triángulo tiene un valor de {csc:.2f} unidades.")
+                            time.sleep(3)
+                            print("Regresando al menú principal...")
+                            time.sleep(2)
                             main()
+
+                        # Ángulo
+                        elif en_function == 3:
+                            a = float(input("\nIngrese el valor del ángulo: "))
+                            csc = 1 / math.sin(a)
+                            print(f"\nLa cosecante de este triángulo tiene un valor de {csc:.2f} unidades.")
+                            time.sleep(3)
+                            print("Regresando al menú principal...")
+                            time.sleep(2)
+                            main()
+
+                        # Operación incorrecta
+                        else:
+                            print("\nError: Operación incorrecta.")
+                            time.sleep(3)
+                            print("Regresando al menú de selección de polígonos...")
+                            time.sleep(2)
+                            fig_2d()
+
+                    # Secante
+                    elif option == 5:
+                        print("\n¿En función de qué desea realizar esta función?")
+                        print("1 - De la hipotenusa y cateto adyacente")
+                        print("2 - Del valor del coseno del ángulo")
+                        print("3 - Del ángulo")
+                        en_function = int(input("Opción: "))
+
+                        # Hipotenusa y cateto adyacente
+                        if en_function == 1:
+                            hip = float(input("\nIngrese el valor de la hipotenusa: "))
+                            ca = float(input("Ingrese el valor del cateto adyacente: "))
+                            sec = hip / ca
+                            if hip <= 0 or ca <= 0:
+                                print("\nError: Los valores ingresados son menores o iguales a cero.")
+                                time.sleep(3)
+                                print("Regresando al menú de selección de polígonos...")
+                                time.sleep(2)
+                                fig_2d()
+                            else:
+                                print(f"\nLa secante de este triángulo tiene un valor de {sec:.2f} unidades.")
+                                time.sleep(3)
+                                print("Volviendo al menú principal...")
+                                time.sleep(2)
+                                main()
+
+                        # Valor del coseno
+                        elif en_function == 2:
+                            cos = float(input("Ingrese el valor de coseno: "))
+                            sec = 1 / cos
+                            print(f"La secante de este triángulo tiene un valor de {sec:.2f} unidades.")
+                            time.sleep(3)
+                            print("Regresando al menú principal...")
+                            time.sleep(2)
+                            main()
+
+                        # Ángulo
+                        elif en_function == 3:
+                            a = float(input("Ingrese el valor del ángulo: "))
+                            sec = 1 / math.cos(a)
+                            print(f"La secante de este triángulo tiene un valor de {sec:.2f} unidades.")
+                            time.sleep(3)
+                            print("Regresando al menú principal...")
+                            time.sleep(2)
+                            main()
+
+                        # Operación incorrecta
+                        else:
+                            print("\nError: Operación incorrecta.")
+                            time.sleep(3)
+                            print("Regresando al menú de selección de polígonos...")
+                            time.sleep(2)
+                            fig_2d()
+
+                    # Cotangente
+                    elif option == 6:
+                        print("\n¿En función de qué desea realizar esta función?")
+                        print("1 - Del cateto adyacente y el cateto opuesto")
+                        print("2 - Del valor de la tangente del ángulo")
+                        print("3 - Del ángulo")
+                        en_function = int(input("Opción: "))
+
+                        # Cateto adyacente y cateto opuesto
+                        if en_function == 1:
+                            ca = float(input("\nIngrese el valor del cateto adyacente: "))
+                            co = float(input("Ingrese el valor del cateto opuesto: "))
+                            cotg = ca / co
+                            print(f"\nLa cotangente de este triángulo tiene un valor de {cotg:.2f} unidades.")
+                            time.sleep(3)
+                            print("Regresando al menú principal...")
+                            time.sleep(2)
+                            main()
+
+                        # Valor de la tangente
+                        elif en_function == 2:
+                            tan = float(input("\nIngrese el valor de la tangente: "))
+                            cotg = 1 / tan
+                            if tan == 0 or tan > 1 or tan < -1:
+                                print("Error: El valor de la tangente debe estar entre los valores de -1 y 1.")
+                                time.sleep(3)
+                                print("Regresando al menú de polígonos...")
+                                time.sleep(2)
+                                fig_2d()
+                            else:
+                                print(f"\nEl valor de la cotangente de este triángulo es de {cotg:.2f} unidades.")
+                                time.sleep(3)
+                                print("Regresando al menú principal...")
+                                time.sleep(2)
+                                main()
+
+                        # Ángulo
+                        elif en_function == 3:
+                            a = float(input("Ingrese el valor del ángulo: "))
+                            sec = 1 / math.tan(a)
+                            if a == 90 or a == 270:
+                                print("\nError: La tangente no se encuentra expresada en este valor.")
+                                time.sleep(3)
+                                print("Regresando al menú de polígonos...")
+                                time.sleep(2)
+                                fig_2d()
+                            else:
+                                print(f"\nLa secante de este triángulo tiene un valor de {sec:.2f} unidades.")
+                                time.sleep(3)
+                                print("Regresando al menú principal...")
+                                time.sleep(2)
+                                main()
 
                     # Operación no reconocida
                     else:
@@ -1302,6 +1445,7 @@ def main():
         print("Testeo: Qm_Dev")
         time.sleep(3)
         print("Agradecimientos especiales: Alejandro Taboada Sánchez")
+        print("Código fuente: https://github.com/Qm-Dev/figures-calculator")
         time.sleep(5)
         main()
 
