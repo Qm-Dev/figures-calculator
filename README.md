@@ -1,15 +1,15 @@
 # figures-calculator
 
 ## Acerca de
-_Este programa permite al usuario calcular diferentes aspectos de polígonos y poliedros por medio
-de una calculadora escrita en Python._
+Este programa permite al usuario calcular diferentes aspectos de polígonos y poliedros por medio
+de una calculadora escrita en Python.
 
 ## Requisitos
-* Sistema operativo: Windows 10
+* Sistema operativo: Windows 10, Windows 7
 
 ## Construcción
 * Pycharm Community Edition (Programación y diseño)
 
 ## Licencia
-_Este proyecto se encuentra bajo la licencia del MIT. Para más detalles, revise el archivo
+Este proyecto se encuentra bajo la licencia del MIT. Para más detalles, revise el archivo
 de LICENSE en el proyecto.
