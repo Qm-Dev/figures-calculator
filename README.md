@@ -3,9 +3,10 @@
 ## Acerca de
 Este programa permite al usuario calcular diferentes aspectos de polígonos y poliedros por medio
 de una calculadora escrita en el lenguaje de Python.
+Actualmente hay 4 polígonos y 5 poliedros disponibles.
 
 ## Requisitos
-* Sistema operativo: Windows 10, Windows 7
+* OS: Windows 10, Windows 7
 * Espacio mínimo en disco: 10 megabytes
 
 ## Construcción
@@ -16,5 +17,4 @@ Este proyecto se encuentra bajo la licencia del MIT. Para más detalles, revise 
 de LICENSE en el proyecto.
 
 ## Futuras tareas
-* Traducción al inglés.
 * Adición de más polígonos y poliedros.
