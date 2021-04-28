@@ -1171,7 +1171,7 @@ while redo == 0:
                         # Área de un cubo
                         if opt == 1:
                             a = float(input("\nIngrese la medida del arista del cubo: "))
-                            area_cubo = 6 * (a ** 3)
+                            area_cubo = 6 * (a ** 2)
                             print(f"\nEl área total de este cubo es de {area_cubo} unidades cuadradas.")
                             time.sleep(3)
                             print("Regresando al menú de poliedros...")
