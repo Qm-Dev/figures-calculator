@@ -1147,7 +1147,7 @@ while redo == 0:
                         # Area - Cube
                         if opt == 1:
                             a = float(input("\nInput the value of the edge of the cube: "))
-                            area_cubo = 6 * (a ** 3)
+                            area_cubo = 6 * (a ** 2)
                             print(f"\nThe total area of this cube is {area_cubo} square units.")
                             time.sleep(3)
                             print("Returning to the polyhedra menu...")
